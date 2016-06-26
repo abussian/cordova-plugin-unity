@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<plugin id="cordova-plugin-unity" version="0.1.1" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+<plugin id="cordova-plugin-unity" version="0.2.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
   <name>Unity</name>
   <js-module name="Unity" src="www/Unity.js">
     <clobbers target="cordova.plugins.Unity" />
@@ -11,5 +11,13 @@
       </feature>
     </config-file>
     <source-file src="src/ios/Unity.m" />
+  </platform>
+  <platform name="android">
+    <config-file parent="/*" target="config.xml">
+      <feature name="Unity">
+        <param name="android-package" value="Unity" />
+      </feature>
+    </config-file>
+    <source-file src="src/android/Unity.java" />
   </platform>
 </plugin>
